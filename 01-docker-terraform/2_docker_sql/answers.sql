@@ -9,11 +9,16 @@ AND lpep_dropoff_datetime <= timestamp '2019-09-18 23:59:59';
 
 
 -- Question 4
-select lpep_dropoff_datetime - lpep_pickup_datetime td, * from green_taxi_trips
-where lpep_pickup_datetime IN 
-(timestamp '2019-09-18',timestamp '2019-09-16',timestamp '2019-09-26',timestamp '2019-09-21')
+SELECT lpep_dropoff_datetime - lpep_pickup_datetime td, * FROM green_taxi_trips
+WHERE lpep_pickup_datetime >= timestamp '2019-09-18 00:00:00'
+AND lpep_dropoff_datetime <= timestamp '2019-09-18 23:59:59' OR
+lpep_pickup_datetime >= timestamp '2019-09-16 00:00:00'
+AND lpep_dropoff_datetime <= timestamp '2019-09-16 23:59:59' OR
+lpep_pickup_datetime >= timestamp '2019-09-26 00:00:00'
+AND lpep_dropoff_datetime <= timestamp '2019-09-26 23:59:59' OR
+lpep_pickup_datetime >= timestamp '2019-09-21 00:00:00'
+AND lpep_dropoff_datetime <= timestamp '2019-09-21 23:59:59'
 order by td desc limit 1;
-
 
 -- Question 5
 select b."Borough", count(*) from public.green_taxi_trips a

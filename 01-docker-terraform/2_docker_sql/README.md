@@ -175,7 +175,7 @@ docker run -it \
 Running locally
 
 ```bash
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+export URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 
 python ingest_data.py \
   --user=root \
@@ -212,18 +212,17 @@ You can solve it with `.dockerignore`:
 Run the script with Docker
 
 ```bash
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+export URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz"
 
 docker run -it \
   --network=pg-network \
   taxi_ingest:v001 \
     --user=root \
     --password=root \
-    #--host=pg-database \
     --host=host.docker.internal \
-    --port=5432 \
+    --port=5431 \
     --db=ny_taxi \
-    --table_name=yellow_taxi_trips \
+    --table_name=green_taxi_trips \
     --url=${URL}
 ```
 
