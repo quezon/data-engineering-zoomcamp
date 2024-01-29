@@ -22,9 +22,8 @@ For this course, we'll use a free version (upto EUR 300 credits).
 4. Download [SDK](https://cloud.google.com/sdk/docs/quickstart) for local setup
 5. Set environment variable to point to your downloaded GCP keys:
    ```shell
-   cd C:/Users/vorga/OneDrive/Documents/Organizations/DataTalksClub/data-engineering-zoomcamp/01-docker-terraform/1_terraform_gcp
-   #export GOOGLE_APPLICATION_CREDENTIALS="C:/Users/vorga/OneDrive/Documents/Organizations/DataTalksClub/data-engineering-zoomcamp/01-docker-terraform/1_terraform_gcp/rare-inquiry-412603-8c72019bc45e_google_credentials.json"
-   export GOOGLE_APPLICATION_CREDENTIALS="rare-inquiry-412603-8c72019bc45e_google_credentials.json"
+   export GOOGLE_APPLICATION_CREDENTIALS="<path/to/your/service-account-authkeys>.json"
+   
    # Refresh token/session, and verify authentication
    gcloud auth application-default login
    ```

@@ -5,8 +5,6 @@
 ### Execution
 
 ```shell
-# set GOOGLE_APPLICATION_CREDENTIALS
-export GOOGLE_APPLICATION_CREDENTIALS="C:/Users/vorga/OneDrive/Documents/Organizations/DataTalksClub/data-engineering-zoomcamp/01-docker-terraform/1_terraform_gcp/rare-inquiry-412603-8c72019bc45e_google_credentials.json"
 # Refresh service-account's auth-token for this session
 gcloud auth application-default login
 
@@ -14,12 +12,12 @@ gcloud auth application-default login
 terraform init
 
 # Check changes to new infra plan
-terraform plan -var="project=rare-inquiry-412603"
+terraform plan -var="project=<your-gcp-project-id>"
 ```
 
 ```shell
 # Create new infra
-terraform apply -var="project=rare-inquiry-412603"
+terraform apply -var="project=<your-gcp-project-id>"
 ```
 
 ```shell
